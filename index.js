@@ -24,12 +24,6 @@ const deleteAllButton = pointButtonDiv.querySelector("#deleteAllButton")
 const saveSequenceButton = document.querySelector('#saveSequenceButton')
 const sequenceStorage = document.querySelector("#sequence-storage")
 
-/*
-    TODO: 
-    1. Get Increment and Decrement Working (DONE)
-    2. Get save entry working (DONE)
-    3. Ger
-*/
 //Mechanic
 
 let num = 0
