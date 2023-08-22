@@ -38,6 +38,7 @@ html, body {
     padding: 20px;
     font-weight: bolder;
     transition: 1s;
+    animation: smooth;
 }
 
 #modal-close {
@@ -47,6 +48,34 @@ html, body {
     padding: 10px 50px;
     border-radius: 20px;
     font-weight: bolder;
+}
+
+.openAnimation {
+    animation: smoothOpen 1s forwards; 
+}
+
+@keyframes smoothOpen {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 100px;
+        transform: translateY(0px);
+    }
+}
+.closeAnimation {
+    animation: smoothClose 1s forwards; 
+}
+@keyframes smoothClose {
+    0% {
+        opacity: 100px;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
 button {
     font-family: 'Lexend', sans-serif;

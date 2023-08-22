@@ -117,7 +117,16 @@ deleteAllButton.addEventListener("click", function() {
 
 modalButton.addEventListener("click", function() {
     advancedModalDiv.style.display = "block"
+    advancedModalDiv.classList.add("openAnimation")
+    setTimeout(() => {
+        advancedModalDiv.classList.remove("openAnimation")
+    }, 1000);
 })
 modalClose.addEventListener("click", function() {
-    advancedModalDiv.style.display = "none"
+    
+    advancedModalDiv.classList.add("closeAnimation")
+    setTimeout(() => {
+        advancedModalDiv.classList.remove("closeAnimation")
+        advancedModalDiv.style.display = "none"
+    }, 1000);
 })
