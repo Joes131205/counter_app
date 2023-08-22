@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lexend:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
 </head>
 <body>
     <div id="points">
-        <p>Current Point</p>
-        <p id="point-current"></p>
+        <p style="font-size: 50px;">Current Point</p>
+        <p id="point-current">0</p>
+        <div id="points-button">
+            <button id="incrementButton">Increment</button>
+            <button id="decrementButton">Decrement</button>
+            <button id="saveButton">Save entry</button>
+        </div>    
+
     </div>
 
-    <div id="point-button">
-        <button id="incrementButton">Increment</button>
-        <button id="decrementButton">Decrement</button>
-        <button id="saveButton">Save entry</button>
-        <button id="saveSequenceButton">Save whole sequence</button>
-        <button id="deleteOnceButton">Delete recent number</button>
-        <button id="deleteAllButton">Delete whole sequence</button>
-        
-    </div>
+
 
     <div id="sequence">
         <p>Sequence</p>
         <p id="point-sequence"></p>    
+        <div id="sequences-button">
+            <button id="saveSequenceButton">Save whole sequence</button>
+            <button id="deleteOnceButton">Delete recent number</button>
+            <button id="deleteAllButton">Delete whole sequence</button>
+        </div>    
         <button id="modalButton">Get info of current sequence</button>
 
         <p>Sequence Storage</p>
@@ -37,14 +41,14 @@
 
     <div id="advanced-modal">
         <div id="modal">
-            <button id="modal-close">close</button>
-            <p id="highest-point">e</p>
-            <p id="lowest-point">e</p>
-            <p id="highest-point-sequence">e</p>
-            <p id="lowest-point-sequence">e</p>
-            <p id="total-point">e</p>
-            <p id="average-point">e</p>
-            <p id="median-point">e</p>
+            <button id="modal-close">X CLOSE X</button>
+            <p id="highest-point">Highest Number = -</p>
+            <p id="lowest-point">Lowest Number = -</p>
+            <p id="highest-point-sequence">Most Frequent = -</p>
+            <p id="lowest-point-sequence">Least Frequent = -</p>
+            <p id="total-point">Sum of Numbers = -</p>
+            <p id="average-point">Average Sum = -</p>
+            <p id="median-point">Middle Num of Sequence = -</p>
         </div>
     </div>
 

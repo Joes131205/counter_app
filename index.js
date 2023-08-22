@@ -5,26 +5,26 @@ const pointButtonDiv = document.getElementById("point-button")
 const advancedModalDiv = document.getElementById("advanced-modal")
 
 // Variables to access the paragraph elements
-const currentPointParagraph = pointsDiv.querySelector("#point-current")
-const sequencePointParagraph = sequenceDiv.querySelector("#point-sequence")
-const highestPointParagraph = advancedModalDiv.querySelector("#highest-point")
-const lowestPointParagraph = advancedModalDiv.querySelector("#lowest-point")
-const highestSequencePointParagraph = advancedModalDiv.querySelector("#highest-point-sequence")
-const lowestSequencePointParagraph = advancedModalDiv.querySelector("#lowest-point-sequence")
-const totalPointParagraph = advancedModalDiv.querySelector("#total-point")
-const averagePointParagraph = advancedModalDiv.querySelector("#average-point")
-const medianPointParagraph = advancedModalDiv.querySelector("#median-point")
+const currentPointParagraph = document.getElementById("point-current")
+const sequencePointParagraph = document.getElementById("point-sequence")
+const highestPointParagraph = document.getElementById("highest-point")
+const lowestPointParagraph = document.getElementById("lowest-point")
+const highestSequencePointParagraph = document.getElementById("highest-point-sequence")
+const lowestSequencePointParagraph = document.getElementById("lowest-point-sequence")
+const totalPointParagraph = document.getElementById("total-point")
+const averagePointParagraph = document.getElementById("average-point")
+const medianPointParagraph = document.getElementById("median-point")
 
 // Buttons
-const incrementButton = pointButtonDiv.querySelector("#incrementButton")
-const decrementButton = pointButtonDiv.querySelector("#decrementButton")
-const saveButton = pointButtonDiv.querySelector("#saveButton")
-const deleteOnceButton = pointButtonDiv.querySelector("#deleteOnceButton")
-const deleteAllButton = pointButtonDiv.querySelector("#deleteAllButton")
-const saveSequenceButton = document.querySelector('#saveSequenceButton')
-const sequenceStorage = document.querySelector("#sequence-storage")
-const modalButton = document.querySelector("#modalButton")
-const modalClose = document.querySelector("#modal-close")
+const incrementButton = document.getElementById("incrementButton")
+const decrementButton = document.getElementById("decrementButton")
+const saveButton = document.getElementById("saveButton")
+const deleteOnceButton = document.getElementById("deleteOnceButton")
+const deleteAllButton = document.getElementById("deleteAllButton")
+const saveSequenceButton = document.getElementById('saveSequenceButton')
+const sequenceStorage = document.getElementById("sequence-storage")
+const modalButton = document.getElementById("modalButton")
+const modalClose = document.getElementById("modal-close")
 //Mechanic
 
 let num = 0
@@ -35,7 +35,6 @@ function setText() {
     currentPointParagraph.textContent = num
 }
 window.addEventListener("load", function() {
-    //TODO Add some kinf of save state
     setText()
 })
 function increment() {

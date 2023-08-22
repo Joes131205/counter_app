@@ -1,8 +1,16 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    user-select: none;
+}
+
 #advanced-modal {
     display: none;
     position: fixed;
-
-    
     z-index: 1;
     top: 0;
     left: 0;
@@ -11,18 +19,81 @@
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-
+    transition: 1s;
 }
 
 #modal {
+    color: black;
     background-color: #fefefe;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 50%;
-    position: fixed; /* Added */
-    top: 50%; /* Added */
-    left: 50%; /* Added */
-    transform: translate(-50%, -50%); /* Added */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 20px;
+    font-weight: bolder;
+    transition: 1s;
 }
+
+#modal-close {
+    background-color: #fefefe;
+    border: 1px solid red;
+    color: red;
+    padding: 10px 50px;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+button {
+    font-family: 'Lexend', sans-serif;
+}
+
+#points {
+    background-color: rgb(176, 241, 192);
+    border-radius: 20px;
+    padding: 40px;
+    color: black;
+}
+#points > #points-button > button {
+    padding: 30px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+#incrementButton {
+    border: 5px solid rgb(2, 138, 2);
+    font-weight: bolder;
+    color: rgb(1, 145, 49);
+    font-size: 30px;
+    background-color: rgb(74, 231, 108);
+}
+
+#decrementButton {
+    border: 5px solid rgb(148, 7, 7);
+    font-weight: bolder;
+    color: rgb(141, 2, 2);
+    font-size: 30px;
+    background-color: rgb(226, 69, 69);
+}
+
+#saveButton {
+    border: 5px solid rgb(3, 175, 255);
+    font-weight: bolder;
+    color: rgb(93, 133, 241);
+    font-size: 30px;
+    background-color: rgb(1, 74, 184);
+}
+#point-current {
+    font-size: 100px; 
+}
+#points > p {
+    margin: 5px;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+}
+
