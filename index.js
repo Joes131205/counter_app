@@ -1,10 +1,8 @@
-// Variables to access the main divs
 const pointsDiv = document.getElementById("points")
 const sequenceDiv = document.getElementById("sequence")
 const pointButtonDiv = document.getElementById("point-button")
 const advancedModalDiv = document.getElementById("advanced-modal")
 
-// Variables to access the paragraph elements
 const currentPointParagraph = document.getElementById("point-current")
 const sequencePointParagraph = document.getElementById("point-sequence")
 const highestPointParagraph = document.getElementById("highest-point")
@@ -15,7 +13,6 @@ const totalPointParagraph = document.getElementById("total-point")
 const averagePointParagraph = document.getElementById("average-point")
 const medianPointParagraph = document.getElementById("median-point")
 
-// Buttons
 const incrementButton = document.getElementById("incrementButton")
 const decrementButton = document.getElementById("decrementButton")
 const saveButton = document.getElementById("saveButton")
@@ -25,7 +22,7 @@ const saveSequenceButton = document.getElementById('saveSequenceButton')
 const sequenceStorage = document.getElementById("sequence-storage")
 const modalButton = document.getElementById("modalButton")
 const modalClose = document.getElementById("modal-close")
-//Mechanic
+
 
 let num = 0
 let currentArray = []
@@ -48,53 +45,62 @@ function decrement() {
 }
 function updateModal() {
     let obj = {}
-
+    let highestFrequency = 0;
+    let lowestFrequency = Infinity;
+    
     for (let i = 0; i < currentArray.length; i++) {
-        const current = currentArray[i]
+        const current = currentArray[i];
+        
         if (obj[current]) {
-            obj[current]++
+            obj[current]++;
         } else {
-            obj[current] = 1
+            obj[current] = 1;
         }
-    }    
-    let highestFrequency = 0
-    let lowestFrequency = Infinity
-    for (const key in obj) {
-        const frequency = obj[key]
+        
+        const frequency = obj[current];
+    
         if (frequency > highestFrequency) {
-            highestFrequency = key
-        } 
+            highestFrequency = frequency;
+        }
+        
         if (frequency < lowestFrequency) {
-            lowestFrequency = key
+            lowestFrequency = frequency;
         }
     }
+
+    const highestFrequencyValue = Object.keys(obj).find(key => obj[key] === highestFrequency)
+    const lowestFrequencyValue = Object.keys(obj).find(key => obj[key] === lowestFrequency)
+
+
     const middlePoint = currentArray[Math.round((currentArray.length - 1) / 2)]
     const total = currentArray.reduce((acc, item) => acc + item)
     const highest = Math.max(...currentArray)
     const lowest = Math.min(...currentArray)
-    const average = Math.floor(total / currentArray.length)
+    const average = (total / currentArray.length).toFixed(2)
     medianPointParagraph.textContent = `Middle Num of Sequence = ${middlePoint}`
     totalPointParagraph.textContent = `Sum of Numbers = ${total}`
     highestPointParagraph.textContent = `Highest Number = ${highest}`
     lowestPointParagraph.textContent = `Lowest Number = ${lowest}`
     averagePointParagraph.textContent = `Average Sum = ${average}`
-    highestSequencePointParagraph.textContent = `Most Frequent = ${highestFrequency}`
-    lowestSequencePointParagraph.textContent = `Least Frequent = ${lowestFrequency}`
+    highestSequencePointParagraph.textContent = `Most Frequent = ${highestFrequencyValue}`
+    lowestSequencePointParagraph.textContent = `Least Frequent = ${lowestFrequencyValue}`
 }
 incrementButton.addEventListener("click", increment)
 decrementButton.addEventListener("click", decrement)
 
 saveButton.addEventListener("click", function() {
     currentArray.push(num)
-    sequencePointParagraph.textContent = currentArray.map(item => `${item}`).join(' | ');
+    sequencePointParagraph.textContent = currentArray.map(item => `${item}`).join(' || ');
     num = 0
     setText()
     updateModal()
 })
 
 deleteOnceButton.addEventListener("click", function() {
-    currentArray.pop() 
-    sequencePointParagraph.textContent = currentArray.map(item => `${item}`).join(' | ');
+    currentArray.pop()
+    updateModal() 
+    sequencePointParagraph.textContent = currentArray.map(item => `${item}`).join(' || ');
+    if (sequencePointParagraph.textContent === "") {sequencePointParagraph.textContent = "-"}
 })
 
 saveSequenceButton.addEventListener("click", function() {
@@ -103,7 +109,7 @@ saveSequenceButton.addEventListener("click", function() {
         currentArray = []
         num = 0
         setText()
-        sequencePointParagraph.textContent = ""
+        sequencePointParagraph.textContent = "-"
         sequenceStorage.innerHTML = storageArray.map(item => `<li>${item}</li>`).join("")        
     }
 })
@@ -112,7 +118,7 @@ deleteAllButton.addEventListener("click", function() {
     currentArray = []
     num = 0
     setText()
-    sequencePointParagraph.textContent = ""
+    sequencePointParagraph.textContent = "-"
 })
 
 modalButton.addEventListener("click", function() {

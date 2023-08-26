@@ -126,3 +126,69 @@ button {
     font-weight: bolder;
 }
 
+#sequence {
+    background-color: rgb(255, 255, 255);
+    margin-top: 40px;
+    padding: 20px 60px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+}
+.sequence-paragraph {
+    font-size: xx-large;
+
+}
+#point-sequence {
+    font-size: xx-large;
+}
+
+#sequences-button > button {
+    margin: 5px;
+}
+#saveSequenceButton {
+    border: none;
+    font-weight: bold;
+    color: rgb(1, 145, 49);
+    font-size: larger;
+    background-color: rgba(74, 231, 108, 0);
+    border: 3px solid green;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+#deleteOnceButton {
+    border: none;
+    font-weight: bold;
+    color: rgb(209, 0, 0);
+    font-size: larger;
+    background-color: rgba(74, 231, 108, 0);
+    border: 3px solid rgb(209, 0, 0);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#deleteAllButton {
+    border: none;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    font-size: larger;
+    background-color: rgba(74, 231, 108, 0);
+    border: 3px solid rgb(255, 0, 0);
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+#modalButton {
+    border: none;
+    font-weight: bold;
+    color: rgb(0, 140, 255);
+    font-size: larger;
+    background-color: rgba(74, 231, 108, 0);
+    border: 3px solid rgb(0, 140, 255);
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 6px;        
+}
